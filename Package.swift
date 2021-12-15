@@ -26,8 +26,10 @@ let package = Package(
         .library(name: "XLActionControllerYoutube", targets: ["XLActionController_Youtube"])
     ],
     targets: [
-        .target(name: "XLActionController", path: "Source",
-                resources: [Resource.process("Resource/ActionCell.xib")]),
+        .target(name: "XLActionController", 
+                path: "Source", 
+                exclude: ["Info.plist"],
+                resources: [Resource.process("../Resource/ActionCell.xib")]),
         getExampleTarget(name: "Periscope"),
         getExampleTarget(name: "Skype"),
         getExampleTarget(name: "Spotify"),
